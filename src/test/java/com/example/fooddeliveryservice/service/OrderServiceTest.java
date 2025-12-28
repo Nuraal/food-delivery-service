@@ -32,7 +32,7 @@ public class OrderServiceTest {
         when(orderRepository.findById(1L)).thenReturn(Optional.of(order));
         when(orderRepository.save(any(Order.class))).thenAnswer(i -> i.getArguments()[0]);
 
-        Order updated = orderService.updateStatus(1L, OrderStatus.DELIVERED); // Сенің сервисіңдегі метод аты
+        Order updated = orderService.updateStatus(1L, OrderStatus.DELIVERED); 
 
         assertEquals(OrderStatus.DELIVERED, updated.getStatus());
         verify(orderRepository).save(any(Order.class));

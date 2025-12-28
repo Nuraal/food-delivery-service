@@ -29,7 +29,7 @@ public class ReviewServiceTest {
         review.setComment("Good");
         when(reviewRepository.save(any(Review.class))).thenReturn(review);
 
-        Review saved = reviewService.leaveReview(review); // Сенің сервисіңдегі метод аты
+        Review saved = reviewService.leaveReview(review); 
 
         assertNotNull(saved);
         assertEquals("Good", saved.getComment());
